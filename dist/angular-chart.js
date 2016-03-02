@@ -14,7 +14,10 @@
   }
 }(function (angular, Chart) {
   'use strict';
-
+  
+  // Support for window injection #shoaibmerchant (temporary 2.0 support hack)
+  Chart = Chart ? Chart : window.Chart;
+  
   Chart.defaults.global.multiTooltipTemplate = '<%if (datasetLabel){%><%=datasetLabel%>: <%}%><%= value %>';
   Chart.defaults.global.colors = [
     '#97BBCD', // blue
